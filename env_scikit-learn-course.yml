@@ -1,0 +1,14 @@
+name: scikit-learn-course
+channels:
+  - defaults
+dependencies:
+  - matplotlib-base
+  - scikit-learn[version='>=0.24']
+  - jupytext
+  - plotly
+  - pandas[version='>=1']
+  - imbalanced-learn
+  - jupyterlab
+  - notebook
+  - seaborn
+prefix: /home/explore/miniconda3/envs/scikit-learn-course
