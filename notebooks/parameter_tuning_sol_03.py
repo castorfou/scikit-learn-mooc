@@ -96,7 +96,7 @@ model = make_pipeline(preprocessor, LogisticRegression())
 # Once the computation has completed, print the best combination of parameters
 # stored in the `best_params_` attribute.
 
-# In[ ]:
+# In[6]:
 
 
 from sklearn.model_selection import RandomizedSearchCV
@@ -130,7 +130,7 @@ model_random_search.best_params_
 # than welcome to try!). Instead we are going to load the results obtained from
 # a similar search with many more iterations (1,000 instead of 20).
 
-# In[ ]:
+# In[7]:
 
 
 cv_results = pd.read_csv(
@@ -140,7 +140,7 @@ cv_results = pd.read_csv(
 # To simplify the axis of the plot, we will rename the column of the dataframe
 # and only select the mean test score and the value of the hyperparameters.
 
-# In[ ]:
+# In[8]:
 
 
 column_name_mapping = {
@@ -163,7 +163,7 @@ cv_results = cv_results[column_name_mapping.values()].sort_values(
 # We also take the logarithm of the `C` values to span the data on a broader
 # range for a better visualization.
 
-# In[ ]:
+# In[9]:
 
 
 column_scaler = ["centering", "scaling"]
@@ -171,7 +171,7 @@ cv_results[column_scaler] = cv_results[column_scaler].astype(np.int64)
 cv_results['log C'] = np.log10(cv_results['C'])
 
 
-# In[ ]:
+# In[11]:
 
 
 import plotly.express as px

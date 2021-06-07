@@ -1,5 +1,6 @@
 #!/usr/bin/env python
 # coding: utf-8
+# %%
 
 # # 📝 Exercise M3.02
 # 
@@ -10,7 +11,7 @@
 # run faster. Feel free to increase the `train_size` value if your computer
 # is powerful enough.
 
-# In[1]:
+# %%
 
 
 import numpy as np
@@ -38,7 +39,7 @@ data_train, data_test, target_train, target_test = train_test_split(
 # Start by defining the columns and the preprocessing pipelines to be applied
 # on each columns.
 
-# In[2]:
+# %%
 
 
 from sklearn.preprocessing import OneHotEncoder
@@ -51,7 +52,7 @@ numerical_preprocessor = StandardScaler()
 # Subsequently, create a `ColumnTransformer` to redirect the specific columns
 # a preprocessing pipeline.
 
-# In[3]:
+# %%
 
 
 from sklearn.compose import ColumnTransformer
@@ -65,7 +66,7 @@ preprocessor = ColumnTransformer([
 
 # Finally, concatenate the preprocessing pipeline with a logistic regression.
 
-# In[4]:
+# %%
 
 
 from sklearn.pipeline import make_pipeline
@@ -88,7 +89,7 @@ model = make_pipeline(preprocessor, LogisticRegression())
 # Once the computation has completed, print the best combination of parameters
 # stored in the `best_params_` attribute.
 
-# In[6]:
+# %%
 
 
 from sklearn import set_config
@@ -96,13 +97,13 @@ set_config(display='diagram')
 model
 
 
-# In[7]:
+# %%
 
 
 model.get_params()
 
 
-# In[26]:
+# %%
 
 
 from sklearn.model_selection import RandomizedSearchCV
@@ -124,7 +125,7 @@ model_random_search.fit(data_train, target_train)
 model_random_search.best_params_
 
 
-# In[ ]:
+# %%
 
 
 
